@@ -41,7 +41,7 @@ export default function App({navigation}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://bb4e-41-193-208-37.ngrok-free.app/api/tasks/total");
+        const response = await fetch("https://api.te-amo.co.za/public/api/tasks/total");
         
         if (!response.ok) {
           // Handle non-OK responses (e.g., 404 Not Found)
@@ -85,7 +85,7 @@ export default function App({navigation}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://bb4e-41-193-208-37.ngrok-free.app/api/tasks/total/status/Active");
+        const response = await fetch("https://api.te-amo.co.za/public/api/tasks/total/status/Active");
         
         if (!response.ok) {
           // Handle non-OK responses (e.g., 404 Not Found)
@@ -127,7 +127,7 @@ export default function App({navigation}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://bb4e-41-193-208-37.ngrok-free.app/api/tasks/total/status/Completed");
+        const response = await fetch("https://api.te-amo.co.za/public/api/tasks/total/status/Completed");
         
         if (!response.ok) {
           // Handle non-OK responses (e.g., 404 Not Found)
@@ -170,7 +170,7 @@ export default function App({navigation}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://bb4e-41-193-208-37.ngrok-free.app/api/tasks_home");
+        const response = await fetch("https://api.te-amo.co.za/public/api/tasks_home");
         
         if (!response.ok) {
           // Handle non-OK responses (e.g., 404 Not Found)
