@@ -13,7 +13,7 @@ export default createJob = () => {
 	setNoTabNav(false);
 
 	const addJob = async() => {
-	const res = await fetch('http://bb4e-41-193-208-37.ngrok-free.app/api/tasks/add', {
+	const res = await fetch('https://api.te-amo.co.za/public/api/tasks/add', {
 
 	          method: 'POST',
 	          headers: {
