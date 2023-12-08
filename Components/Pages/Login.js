@@ -16,7 +16,7 @@ export default Login = () =>
 		console.log(thisEmail);
 		console.log(password);
 
-		const res = await fetch('http://bb4e-41-193-208-37.ngrok-free.app/api/login', {
+		const res = await fetch('https://api.te-amo.co.za/public/api/login', {
 
           method: 'POST',
           headers: {
