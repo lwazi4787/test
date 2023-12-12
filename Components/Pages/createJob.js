@@ -1,9 +1,15 @@
+
 import {Text, TextInput, View, Button, StyleSheet} from 'react-native';
+
+//import {Text, TextInput, View, Button} from 'react-native';
+
 import {useState, useEffect, useContext} from 'react';
 import { useToast } from "react-native-toast-notifications";
 import { ALERT_TYPE, Dialog, AlertNotificationRoot, Toast } from 'react-native-alert-notification';
 import Context from '../Context';
+
 import SelectDropdown from 'react-native-select-dropdown';
+
 
 export default createJob = () => {
 	const [logedin, setLogedin, token, setToken, name, setName, email, setEmail, main, setMain, user, setUser, noTabNav, setNoTabNav] = useContext(Context);
@@ -11,8 +17,10 @@ export default createJob = () => {
 	const [phone, setPhone] = useState();
 	const [thisEmail, setThisEmail] = useState();
 	const [task, setTask] = useState();
+
 	const [dropDownTask, setDropDownTask] = useState([]);
 	let countries = ["Egypt", "Canada", "Australia", "Ireland"];
+
 	setNoTabNav(false);
 
 	const addJob = async() => {
@@ -58,49 +66,53 @@ export default createJob = () => {
 	}
 
 	return(
+		
 		<AlertNotificationRoot>
 			<View style={{marginTop: 50, width: 340, alignSelf: 'center'}}>
 
-				<View style={{flex: 1, justifyContent: 'center', alignItems: 'center',}}>
-				{/*<SelectDropdown onFocus={() => Focus()}
-					data={dropDownTask}
-					onSelect={(selectedItem, index) => {
-						console.log(selectedItem, index);
-					}}
-					buttonTextAfterSelection={(selectedItem, index) => {
-						// text represented after item is selected
-						// if data array is an array of objects then return selectedItem.property to render after item is selected
-						return selectedItem
-					}}
-					rowTextForSelection={(item, index) => {
-						// text represented for each item in dropdown
-						// if data array is an array of objects then return item.property to represent item in dropdown
-						return item
-					}}
+					<View style={{flex: 1, justifyContent: 'center', alignItems: 'center',}}>
+					{/*<SelectDropdown onFocus={() => Focus()}
+						data={dropDownTask}
+						onSelect={(selectedItem, index) => {
+							console.log(selectedItem, index);
+						}}
+						buttonTextAfterSelection={(selectedItem, index) => {
+							// text represented after item is selected
+							// if data array is an array of objects then return selectedItem.property to render after item is selected
+							return selectedItem
+						}}
+						rowTextForSelection={(item, index) => {
+							// text represented for each item in dropdown
+							// if data array is an array of objects then return item.property to represent item in dropdown
+							return item
+						}}
 
-					defaultButtonText="Select customer"
-					defaultButtonTextStyle={styles.placeholderText}
-					buttonStyle={styles.dropdownButton}
-			        buttonTextStyle={styles.dropdownButtonText}
-			        dropdownStyle={styles.dropdownContainer}
-				/>*/}
-				</View>
+						defaultButtonText="Select customer"
+						defaultButtonTextStyle={styles.placeholderText}
+						buttonStyle={styles.dropdownButton}
+				        buttonTextStyle={styles.dropdownButtonText}
+				        dropdownStyle={styles.dropdownContainer}
+					/>*/}
+					</View>
 
-				<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5, marginTop: 30,}} value={customer} onChangeText={(e) => setCustomer(e) } placeholder="Enter Customer" placeholderTextColor="grey" />
+					{/*<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5, marginTop: 30,}} value={customer} onChangeText={(e) => setCustomer(e) } placeholder="Enter Customer" placeholderTextColor="grey" />*/}
 
-				<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5,}} value={phone} onChangeText={(e) => setPhone(e) } placeholder="Enter Phone No:" placeholderTextColor="grey" />
+					<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5,}} value={customer} onChangeText={(e) => setCustomer(e) } placeholder="Enter Customer" placeholderTextColor="grey" />
 
-				<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5,}} value={thisEmail} onChangeText={(e) => setThisEmail(e) } placeholder="Enter email" placeholderTextColor="grey" />
 
-				<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5,}} value={task} onChangeText={(e) => setTask(e) } placeholder="Enter Task" placeholderTextColor="grey" />
+					<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5,}} value={phone} onChangeText={(e) => setPhone(e) } placeholder="Enter Phone No:" placeholderTextColor="grey" />
 
-				<Button
-				  style={{padding: 20}}
-				  onPress={addJob}
-				  title="Add Job"
-				  color="green"
-				  accessibilityLabel="Learn more about this purple button"
-				/>
+					<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5,}} value={thisEmail} onChangeText={(e) => setThisEmail(e) } placeholder="Enter email" placeholderTextColor="grey" />
+
+					<TextInput style={{backgroundColor: '#fff', padding: 20, borderColor: "#dfdfdf", marginBottom: 15, borderWidth: 1, borderRadius: 5,}} value={task} onChangeText={(e) => setTask(e) } placeholder="Enter Task" placeholderTextColor="grey" />
+
+					<Button
+					  style={{padding: 20}}
+					  onPress={addJob}
+					  title="Add Job"
+					  color="green"
+					  accessibilityLabel="Learn more about this purple button"
+					/>
 
 			</View>
 		</AlertNotificationRoot>
@@ -108,7 +120,7 @@ export default createJob = () => {
 }
 
 const styles = StyleSheet.create({
-	dropdownButton: {
+	/*dropdownButton: {
     width: 200,
     height: 40,
     backgroundColor: '#fff',
@@ -120,7 +132,7 @@ const styles = StyleSheet.create({
     borderColor: "#dfdfdf",
     zIndex: 1000,
 
-  },
+  },*/
   dropdownButtonText: {
     color: 'white',
     fontSize: 16,
@@ -138,3 +150,6 @@ const styles = StyleSheet.create({
   },
 
 })
+
+			
+

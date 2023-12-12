@@ -1,4 +1,5 @@
 import {View, Text, TextInput, StyleSheet} from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 import {useState, useContext} from 'react';
 import Context from './Context';
@@ -28,6 +29,7 @@ export default JobCard = ({Title, setMainData, mainData, mainDataBackUp}) => {
 			<View style={buttonPressed?styles.allJobs:styles.allJobs2} onPress={() => allJobs()}>
 				<Text style={buttonPressed?styles.allJobsText:styles.allJobsText2} onPress={() => allJobs()}>All {Title}</Text>
 			</View>
+		
 
 			<View style={buttonPressed?styles.myJobs:styles.myJobs2} onPress={() => filterJobs(email)}>
 				<Text onPress={() => filterJobs(email)} style={buttonPressed?styles.allJobsText2:styles.allJobsText}>My {Title}</Text>
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
   	borderWidth: 1,
   	borderColor: 'green',
   },
+
   allJobsText:{
   	color: "#fff",
   },
@@ -83,6 +86,7 @@ const styles = StyleSheet.create({
   	borderWidth: 1,
   	borderColor: '#999',
   },
+
   myJobs:{
   	//width: 185,
   	//alignSelf: 'center',
@@ -92,6 +96,7 @@ const styles = StyleSheet.create({
   	borderWidth: 1,
     borderColor: "#9f9f9f",
     backgroundColor: '#fff',
+
   },
   myJobs2:{
   	//width: 185,
@@ -103,6 +108,7 @@ const styles = StyleSheet.create({
     borderColor: "green",
     backgroundColor: 'green',
     color: "#666",
+
   }
 
 });

@@ -5,7 +5,9 @@ import { useState, useEffect } from "react";
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Link } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
+
 import SelectDropdown from 'react-native-select-dropdown';
+
 
 
 
@@ -21,6 +23,7 @@ export default Jobs = () => {
 
 	const navigation = useNavigation();
 
+
 	const countries = ["Egypt", "Canada", "Australia", "Ireland"];
 	
 	const [mainData, setMainData] = useState([]);
@@ -30,6 +33,10 @@ export default Jobs = () => {
 	const onChangeText = (value) => {
 		setMainData(mainDataBackUp.filter((data) => (data.Status.toLowerCase().includes(value.toLowerCase()) || data.Task_Name.toLowerCase().includes(value.toLowerCase()) ||  data.Customer.toLowerCase().includes(value.toLowerCase()) )));
 	}
+
+	//const [mainData, setMainData] = useState([]);
+	//const [isLoading, setIsLoading] = useState(true);
+
 
 	useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +54,9 @@ export default Jobs = () => {
           const json = await response.json();
 
           setMainData(json);
+
           setMainDataBackUp(json);
+
           setIsLoading(false);
         } else {
           // Handle non-JSON responses (e.g., HTML)
@@ -102,13 +111,21 @@ export default Jobs = () => {
 				<View style={{flex: 1, marginTop: 50,}}>
 					<TextInput
 				        style={styles.input}
+
 				        onChangeText={(e)=>onChangeText(e)}
+
+				        onChangeText={onChangeText}
+
 
 				        placeholder="Search" placeholderTextColor="grey"
 				      />
 				</View>
 
+
 				<FilterTabs Title = "Jobs" mainData = {mainData} setMainData = {setMainData} mainDataBackUp = {mainDataBackUp} />
+
+				
+
 
 				{mainData?.map((data) => (
 			      <JobCard key={data.id} Customer={data.Customer} Task_Name ={data.Task_Name} id={data.id} created_at={data.created_at} />
@@ -128,6 +145,12 @@ export default Jobs = () => {
 	      	</>
 	)
 
+}
+
+
+
+const onChangeText = () => {
+	console.log('good');
 }
 
 const styles = StyleSheet.create({

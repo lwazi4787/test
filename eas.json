@@ -1,5 +1,7 @@
 {
+
   //"node": "10.2.3",
+
   "build": {
     "preview": {
       "android": {
@@ -14,6 +16,11 @@
     "preview3": {
       "developmentClient": true
     },
+
     "production": {},
   },
+
+    "production": {}
+  }
+
 }

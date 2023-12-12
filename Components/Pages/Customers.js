@@ -16,6 +16,7 @@ export default Customer = () => {
 	const navigation = useNavigation();
 	
 	const [mainData, setMainData] = useState([]);
+
   const [mainDataBackUp, setMainDataBackUp] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -23,6 +24,10 @@ export default Customer = () => {
   const onChangeText = (value) => {
     setMainData(mainDataBackUp.filter((data) => (data.Name.toLowerCase().includes(value.toLowerCase()) )));
   }
+
+
+	//const [isLoading, setIsLoading] = useState(true);
+
 
 	useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +45,9 @@ export default Customer = () => {
           const json = await response.json();
 
           setMainData(json);
+
           setMainDataBackUp(json);
+
           setIsLoading(false);
         } else {
           // Handle non-JSON responses (e.g., HTML)
@@ -94,7 +101,11 @@ else
 			<View style={{flex: 1, marginTop: 50,}}>
 				<TextInput
 			        style={styles.input}
+
 			        onChangeText={(e) => onChangeText(e)}
+
+			        onChangeText={onChangeText}
+
 			        placeholder="Search" placeholderTextColor="grey"
 			      />
 			</View>
@@ -124,6 +135,11 @@ else
 	)
 
 
+}
+
+
+const onChangeText = () => {
+	console.log('good');
 }
 
 const styles = StyleSheet.create({
